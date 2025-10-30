@@ -113,7 +113,7 @@ export function Toolbox({ buttonSectionId, title }: ToolboxProps) {
           );
         })}
         {activeToolOptions && (
-          <div className="bg-primary-dark mt-1 h-auto px-2">
+          <div className="mt-1 h-auto bg-[rgb(var(--primary-dark))] px-2">
             <ToolSettings options={activeToolOptions} />
           </div>
         )}

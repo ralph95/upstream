@@ -53,7 +53,7 @@ summary: Migration guide for Button components in OHIF 3.10, explaining the tran
     - >
     -   <Icon
     -     name={getPlayPauseIconName()}
-    -     className="active:text-primary-light hover:bg-customblue-300 h-[24px] w-[24px] cursor-pointer text-white"
+    -     className="active:text-primary-light hover:bg-customblue-300 h-[24px] w-[24px] cursor-pointer text-[rgb(var(--text))]"
     -   />
     - </IconButton>
     + <Button

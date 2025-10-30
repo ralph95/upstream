@@ -76,7 +76,7 @@ export default function TMTVPatterns() {
   return (
     <BrowserOnly>
       {() => (
-        <div className="px-auto my-4 flex min-h-screen w-full justify-center bg-black py-12">
+        <div className="px-auto my-4 flex min-h-screen w-full justify-center bg-[rgb(var(--background))] py-12">
           <div className="w-64 space-y-0">
             <Accordion
               type="multiple"
@@ -100,7 +100,7 @@ export default function TMTVPatterns() {
                 <AccordionContent>
                   {/* Appearance Settings */}
                   <AccordionItem value="segmentation-display">
-                    <AccordionTrigger className="bg-muted hover:bg-accent mt-0.5 flex h-7 w-full items-center justify-between rounded-b pr-1 pl-2 font-normal text-white">
+                    <AccordionTrigger className="bg-muted hover:bg-accent mt-0.5 flex h-7 w-full items-center justify-between rounded-b pr-1 pl-2 font-normal text-[rgb(var(--text))]">
                       <div className="flex space-x-2">
                         <Icons.Controls className="text-primary" />
                         <span className="text-primary pr-1">Appearance Settings</span>

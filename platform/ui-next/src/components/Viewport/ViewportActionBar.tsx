@@ -68,7 +68,7 @@ function ViewportActionBar({
       <div className="border-secondary-light mx-2 border-l py-2"></div>
       <span
         data-cy="studyDate"
-        className="text-white"
+        className="text-[rgb(var(--text))]"
       >
         {studyDate}
       </span>
@@ -76,12 +76,12 @@ function ViewportActionBar({
       <span className="text-aqua-pale mr-1 overflow-hidden text-ellipsis">{seriesDescription}</span>
       {/* Prev/Next icons */}
       <Icons.ByName
-        className="hover:text-primary-light ml-auto mr-2 cursor-pointer text-white"
+        className="hover:text-primary-light ml-auto mr-2 cursor-pointer text-[rgb(var(--text))]"
         name="chevron-prev"
         onClick={() => onArrowsClick('left')}
       />
       <Icons.ByName
-        className="hover:text-primary-light mr-2 cursor-pointer text-white"
+        className="hover:text-primary-light mr-2 cursor-pointer text-[rgb(var(--text))]"
         name="chevron-next"
         onClick={() => onArrowsClick('right')}
       />

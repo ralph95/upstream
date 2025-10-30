@@ -37,8 +37,8 @@ You can look at the set of colors in the [Color System](/colors-and-type)
     | `text-common-bright`      | `text-foreground` or `text-primary-foreground`            | Likely the default bright text color.                                 |
     | `text-primary-active`     | `text-primary` or `text-highlight`                        | Simplified to the base primary color or potentially a highlight color.  |
     | `bg-primary-main`         | `bg-primary`                                              | Simplified to the base primary background color.                      |
-    | `text-white` (on dark bg) | `text-foreground` or `text-primary-foreground`            | Use the standard foreground color for the theme.                      |
-    | `bg-black` (for elements) | `bg-background`, `bg-popover`, `bg-card`, or `bg-muted` | Use semantic background colors depending on the element's role.       |
+    | `text-[rgb(var(--text))]` (on dark bg) | `text-foreground` or `text-primary-foreground`            | Use the standard foreground color for the theme.                      |
+    | `bg-[rgb(var(--background))]` (for elements) | `bg-background`, `bg-popover`, `bg-card`, or `bg-muted` | Use semantic background colors depending on the element's role.       |
 
 3.  **Update State Variants and Interactions:**
     Classes managing hover, active, or focus states have likely been simplified or moved into component variants.
@@ -48,7 +48,7 @@ You can look at the set of colors in the [Color System](/colors-and-type)
 
     *Example Diff:*
     ```diff
-    - <div className="bg-primary-main hover:bg-primary-light text-white hover:text-black rounded p-2">
+    - <div className="bg-primary-main hover:bg-primary-light text-[rgb(var(--text))] hover:text-black rounded p-2">
     -  Action Button
     - </div>
 

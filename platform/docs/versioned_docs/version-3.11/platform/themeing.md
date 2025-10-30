@@ -116,7 +116,7 @@ window.config = {
         {
           target: '_blank',
           rel: 'noopener noreferrer',
-          className: 'text-white underline',
+          className: 'text-[rgb(var(--text))] underline',
           href: 'http://radicalimaging.com',
         },
         React.createElement('h5', {}, 'RADICAL IMAGING')

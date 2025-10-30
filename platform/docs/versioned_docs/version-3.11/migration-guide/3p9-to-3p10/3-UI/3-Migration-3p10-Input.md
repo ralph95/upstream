@@ -109,14 +109,14 @@ With `Numeric`, you should wrap everything inside `Numeric.Container`, and you c
 -   containerClassName={'flex flex-row justify-between items-center'}
 -   label={'Weight'}
 -   labelChildren={<span className="text-aqua-pale"> kg</span>}
--   labelClassName="text-[13px] text-white"
+-   labelClassName="text-[13px] text-[rgb(var(--text))]"
 -   className="h-[26px] w-[117px]"
 -   value={metadata.PatientWeight || ''}
 -   onChange={handleWeightChange}
 - />
 
 + <div className="flex flex-row items-center space-x-4"> {/* Replaced containerClassName */}
-+   <Label className="min-w-32 flex-shrink-0 text-[13px] text-white"> {/* Replaced labelClassName */}
++   <Label className="min-w-32 flex-shrink-0 text-[13px] text-[rgb(var(--text))]"> {/* Replaced labelClassName */}
 +     Weight
 +     <span className="text-muted-foreground"> kg</span> {/* Replaced labelChildren */}
 +   </Label>

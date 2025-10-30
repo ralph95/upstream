@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import classNames from 'classnames';
 import {
   DropdownMenu,
@@ -8,12 +8,15 @@ import {
   Icons,
   Button,
   ToolButton,
+  Toggle,
 } from '../';
 import { IconPresentationProvider } from '@ohif/ui-next';
 
 import NavBar from '../NavBar';
+import ToothSelector from '../ToothSelector/ToothSelector';
 
 // Todo: we should move this component to composition and remove props base
+// default: dark mode
 
 interface HeaderProps {
   children?: ReactNode;
@@ -51,6 +54,21 @@ function Header({
     }
   };
 
+  const [isDay, setIsDay] = useState(false);
+
+  const handleToggle = () => {
+    // Flip between day and night
+    const newMode = !isDay;
+    setIsDay(newMode);
+
+    // Apply/remove the "day" class to <html>
+    if (newMode) {
+      document.documentElement.classList.add('day');
+    } else {
+      document.documentElement.classList.remove('day');
+    }
+  };
+
   return (
     <IconPresentationProvider
       size="large"
@@ -61,6 +79,7 @@ function Header({
         {...props}
       >
         <div className="relative h-[48px] items-center">
+          {/* LEFT — Logo / Return */}
           <div className="absolute left-0 top-1/2 flex -translate-y-1/2 items-center">
             <div
               className={classNames(
@@ -71,8 +90,11 @@ function Header({
               data-cy="return-to-work-list"
             >
               {isReturnEnabled && <Icons.ArrowLeft className="text-primary ml-1 h-7 w-7" />}
-              <div className="ml-1">
-                {WhiteLabeling?.createLogoComponentFn?.(React, props) || <Icons.OHIFLogo />}
+              {/* Practice Logo or Name */}
+              <div className="flex items-center gap-3">
+                <div className="ml-1 text-lg font-bold text-[rgb(var(--logo-color))]">
+                  {'Dental Clinic'}
+                </div>
               </div>
             </div>
           </div>
@@ -80,10 +102,19 @@ function Header({
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">
             <div className="flex items-center justify-center space-x-2">{children}</div>
           </div>
+
+          {/* RIGHT — Undo/Redo + Toggle + Settings */}
           <div className="absolute right-0 top-1/2 flex -translate-y-1/2 select-none items-center">
             {UndoRedo}
+            <Toggle onClick={handleToggle}>{isDay ? '🌞' : '🌙'}</Toggle>
             <div className="border-primary-dark mx-1.5 h-[25px] border-r"></div>
-            {PatientInfo}
+            Patient: John Doe
+            <div className="border-primary-dark mx-1.5 h-[25px] border-r"></div>
+            Age: 30
+            <div className="border-primary-dark mx-1.5 h-[25px] border-r"></div>
+            Tooth Selector:
+            {/* Tooth Selector Dropdowns */}
+            <ToothSelector />
             <div className="border-primary-dark mx-1.5 h-[25px] border-r"></div>
             <div className="flex-shrink-0">
               <DropdownMenu>
@@ -91,7 +122,7 @@ function Header({
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="text-primary hover:bg-primary-dark mt-2 h-full w-full"
+                    className="text-primary mt-2 h-full w-full hover:bg-[rgb(var(--primary-dark))]"
                   >
                     <Icons.GearSettings />
                   </Button>

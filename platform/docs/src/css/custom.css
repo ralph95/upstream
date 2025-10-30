@@ -197,11 +197,11 @@
 */
 
 h2.section-header {
-  @apply py-4 text-2xl font-normal text-white;
+  @apply py-4 text-2xl font-normal text-[rgb(var(--text))];
 }
 
 h3.section-header {
-  @apply py-3 text-xl text-white;
+  @apply py-3 text-xl text-[rgb(var(--text))];
 }
 
 .playground-row {

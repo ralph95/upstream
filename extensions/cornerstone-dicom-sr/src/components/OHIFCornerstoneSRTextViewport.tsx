@@ -9,7 +9,7 @@ function OHIFCornerstoneSRTextViewport(props: withAppTypes) {
   const instance = displaySet.instances[0];
 
   return (
-    <div className="relative flex h-full w-full flex-col overflow-auto p-4 text-white">
+    <div className="relative flex h-full w-full flex-col overflow-auto p-4 text-[rgb(var(--text))]">
       <div>
         {/* The root level is always a container */}
         <OHIFCornerstoneSRContainer container={instance} />

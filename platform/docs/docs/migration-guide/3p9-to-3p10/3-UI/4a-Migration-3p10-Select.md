@@ -41,7 +41,7 @@ This guide outlines the steps needed to migrate from the previous `<Select>` com
     - <Select
     -   label={t('Strategy')}
     -   closeMenuOnSelect={true}
-    -   className="border-primary-main mr-2 bg-black text-white"
+    -   className="border-primary-main mr-2 bg-[rgb(var(--background))] text-[rgb(var(--text))]"
     -   options={options}
     -   placeholder={options.find(option => option.value === config.strategy).placeHolder}
     -   value={config.strategy}
@@ -93,4 +93,4 @@ This guide outlines the steps needed to migrate from the previous `<Select>` com
     *   Props like `closeMenuOnSelect` are generally handled by default in the new component.
 
 3.  **Adjust Styling:**
-    The internal structure and default styling have changed. Remove or update previous CSS class names (`className`) applied to the old component and apply new Tailwind/CSS classes to the appropriate sub-components (`Select`, `SelectTrigger`, `SelectContent`, `SelectItem`) as needed to match your desired appearance. Note that `border-primary-main` and `bg-black` might no longer be necessary or applied differently with the new component's structure and variants.
+    The internal structure and default styling have changed. Remove or update previous CSS class names (`className`) applied to the old component and apply new Tailwind/CSS classes to the appropriate sub-components (`Select`, `SelectTrigger`, `SelectContent`, `SelectItem`) as needed to match your desired appearance. Note that `border-primary-main` and `bg-[rgb(var(--background))]` might no longer be necessary or applied differently with the new component's structure and variants.

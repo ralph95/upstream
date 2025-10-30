@@ -40,7 +40,7 @@ function ItemListComponent({
           placeholder={t(`Search ${itemLabel} list`)}
         ></InputFilterText>
       </div>
-      <div className="relative flex min-h-[1px] grow flex-col bg-black text-[14px]">
+      <div className="relative flex min-h-[1px] grow flex-col bg-[rgb(var(--background))] text-[14px]">
         {itemList == null ? (
           <LoadingIndicatorProgress className={'h-full w-full'} />
         ) : itemList.length === 0 ? (
@@ -50,7 +50,9 @@ function ItemListComponent({
           </div>
         ) : (
           <>
-            <div className="bg-secondary-dark px-3 py-1.5 text-white">{t(itemLabel)}</div>
+            <div className="bg-[rgb(var(--secondary-dark))] px-3 py-1.5 text-[rgb(var(--text))]">
+              {t(itemLabel)}
+            </div>
             <div className="ohif-scrollbar overflow-auto">
               {itemList
                 .filter(
@@ -63,7 +65,7 @@ function ItemListComponent({
                   return (
                     <div
                       className={classNames(
-                        'hover:text-primary-light hover:bg-primary-dark group mx-2 flex items-center justify-between px-6 py-2',
+                        'hover:text-primary-light group mx-2 flex items-center justify-between px-6 py-2 hover:bg-[rgb(var(--primary-dark))]',
                         border
                       )}
                       key={item.id}

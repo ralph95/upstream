@@ -250,7 +250,9 @@ function DicomMicroscopyViewport({
           resizeRef.current = ref;
         }}
       />
-      {isLoaded ? null : <LoadingIndicatorProgress className={'h-full w-full bg-black'} />}
+      {isLoaded ? null : (
+        <LoadingIndicatorProgress className={'h-full w-full bg-[rgb(var(--background))]'} />
+      )}
     </div>
   );
 }

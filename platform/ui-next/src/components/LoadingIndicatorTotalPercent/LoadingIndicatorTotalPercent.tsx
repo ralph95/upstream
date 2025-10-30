@@ -28,11 +28,11 @@ function LoadingIndicatorTotalPercent({
 
   const textBlock =
     !totalNumbers && percentComplete === null ? (
-      <div className="text-sm text-white">{loadingText}</div>
+      <div className="text-sm text-[rgb(var(--text))]">{loadingText}</div>
     ) : !totalNumbers && percentComplete !== null ? (
-      <div className="text-sm text-white">Loaded {percentComplete}%</div>
+      <div className="text-sm text-[rgb(var(--text))]">Loaded {percentComplete}%</div>
     ) : (
-      <div className="text-sm text-white">
+      <div className="text-sm text-[rgb(var(--text))]">
         Loaded {numTargetsLoadedText} of {totalNumbersText} {targetText}
       </div>
     );

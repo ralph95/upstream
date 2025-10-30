@@ -6,7 +6,7 @@ import { Icons, Tooltip, TooltipTrigger, TooltipContent } from '../../components
 
 const classes = {
   infoHeader: 'text-base text-primary-light',
-  infoText: 'text-base text-white max-w-24 truncate',
+  infoText: 'text-base text-[rgb(var(--text))] max-w-24 truncate',
   firstRow: 'flex flex-col',
   row: 'flex flex-col ml-4',
 };
@@ -37,7 +37,7 @@ function PatientInfo({
     <div ref={showPatientInfoRef}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <Icons.Info className="hover:text-primary-light cursor-pointer text-white" />
+          <Icons.Info className="hover:text-primary-light cursor-pointer text-[rgb(var(--text))]" />
         </TooltipTrigger>
         {isOpen && (
           <TooltipContent
@@ -50,7 +50,7 @@ function PatientInfo({
               </div>
               <div className="ml-2 flex flex-col">
                 <span
-                  className="text-base font-bold text-white"
+                  className="text-base font-bold text-[rgb(var(--text))]"
                   title={patientName}
                 >
                   {patientName}

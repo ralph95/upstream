@@ -1,4 +1,23 @@
+:root {
+  --background: 17 24 39; /* dark gray */
+  --text: 255 255 255; /* white */
+  --primary-dark: 20 30 60; /* dark blue */
+  --secondary-dark: 30 41 59;
+  --logo-color: 255 255 255;
+}
+
+.day {
+  --background: 255 255 255; /* white */
+  --text: 15 23 42; /* dark gray */
+  --primary-dark: 230 230 255; /* light blue-ish */
+  --secondary-dark: 240 240 255;
+  --logo-color: 0 0 0;
+}
+
 body {
-  overscroll-behavior: none;
-  touch-action: none;
+  background-color: rgb(var(--background));
+  color: rgb(var(--text));
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }

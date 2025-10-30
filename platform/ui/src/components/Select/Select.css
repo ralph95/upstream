@@ -1,5 +1,5 @@
 .customSelect__wrapper .customSelect__control {
-  @apply border-secondary-light w-full rounded border bg-black text-sm leading-tight text-white shadow transition duration-300;
+  @apply border-secondary-light w-full rounded border bg-[rgb(var(--background))] text-sm leading-tight text-[rgb(var(--text))] shadow transition duration-300;
   min-height: 28px;
 }
 .customSelect__wrapper .customSelect__control:hover {
@@ -16,7 +16,7 @@
 }
 
 .customSelect__input {
-  @apply text-white !important;
+  @apply text-[rgb(var(--text))] !important;
   font-size: 0.75rem !important;
   line-height: 1.25 !important;
 }
@@ -42,7 +42,7 @@
   padding: 4px;
 }
 
- .customSelect__option {
+.customSelect__option {
   color: #d6d6d6 !important;
   font-size: 14px !important;
   display: flex !important;

@@ -24,7 +24,7 @@ import {
 // Main header component
 const SegmentationCollapsedHeader = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-primary-dark flex h-10 w-full items-center space-x-1 rounded-t px-1.5">
+    <div className="flex h-10 w-full items-center space-x-1 rounded-t bg-[rgb(var(--primary-dark))] px-1.5">
       {children}
     </div>
   );

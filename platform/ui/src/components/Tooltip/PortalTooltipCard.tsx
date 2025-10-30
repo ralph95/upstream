@@ -54,7 +54,7 @@ export default class PortalTooltipCard extends Component {
     const style = {
       position: 'absolute',
       //padding: '5px',
-      background: 'bg-primary-dark',
+      background: 'bg-[rgb(var(--primary-dark))]',
       //boxShadow: '0 0 4px rgba(0,0,0,.3)',
       borderRadius: '3px',
       //opacity: this.state.hover || this.props.active ? 1 : 0,

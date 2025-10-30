@@ -94,12 +94,12 @@ const ProgressDropdown = ({
   return (
     <div
       ref={element}
-      className="relative grow select-none text-[0px] text-white"
+      className="relative grow select-none text-[0px] text-[rgb(var(--text))]"
     >
       <div>
         <div className="mb-1.5 flex h-[26px]">
           <div
-            className="bg-secondary-dark border-primary-main flex grow cursor-pointer rounded border"
+            className="border-primary-main flex grow cursor-pointer rounded border bg-[rgb(var(--secondary-dark))]"
             style={{ width: `${dropDownWidth}px` }}
             onClick={toggleOpen}
           >
@@ -113,12 +113,12 @@ const ProgressDropdown = ({
           <button
             className={classnames('ml-1.5 w-[26px] rounded text-base', {
               'bg-primary-main': canMoveNext,
-              'bg-primary-dark pointer-events-none': !canMoveNext,
+              'pointer-events-none bg-[rgb(var(--primary-dark))]': !canMoveNext,
             })}
           >
             <Icons.ArrowRight
-              className={classnames('relative left-0.5 h-6 w-6 text-white', {
-                'text-white': canMoveNext,
+              className={classnames('relative left-0.5 h-6 w-6 text-[rgb(var(--text))]', {
+                'text-[rgb(var(--text))]': canMoveNext,
                 'text-secondary-light': !canMoveNext,
               })}
               onClick={handleNextButtonClick}
@@ -128,7 +128,7 @@ const ProgressDropdown = ({
         <div
           className={classnames(
             'absolute top-7 left-0 right-8 z-10 mt-0.5 origin-top',
-            'bg-primary-dark overflow-hidden transition-[max-height] duration-300',
+            'overflow-hidden bg-[rgb(var(--primary-dark))] transition-[max-height] duration-300',
             'border-secondary-main rounded border shadow',
             {
               hidden: !open,

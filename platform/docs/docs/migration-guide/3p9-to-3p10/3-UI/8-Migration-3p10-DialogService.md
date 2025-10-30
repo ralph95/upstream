@@ -69,7 +69,7 @@ A: This can happen if you were previously setting the background color on the di
 For example:
 ```diff
 - containerClassName: 'w-[70%] max-w-[900px]',
-+ containerClassName: 'w-[70%] max-w-[900px] bg-primary-dark text-foreground',
++ containerClassName: 'w-[70%] max-w-[900px] bg-[rgb(var(--primary-dark))] text-foreground',
 ```
 
 **Q: How do I create a dialog without the default container, like for a context menu?**

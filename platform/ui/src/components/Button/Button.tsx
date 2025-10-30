@@ -33,7 +33,7 @@ const enabledEffectClasses = {
   ),
 };
 
-const baseEnabledClasses = 'text-white';
+const baseEnabledClasses = 'text-[rgb(var(--text))]';
 
 const enabledClasses = {
   [ButtonEnums.type.primary]: classnames(

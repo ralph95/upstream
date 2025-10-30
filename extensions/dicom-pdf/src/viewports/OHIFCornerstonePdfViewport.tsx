@@ -44,7 +44,7 @@ function OHIFCornerstonePdfViewport({ displaySets, viewportId = 'pdf-viewport' }
 
   return (
     <div
-      className="bg-primary-black h-full w-full text-white"
+      className="bg-primary-black h-full w-full text-[rgb(var(--text))]"
       onClick={makePdfScrollable}
       ref={el => {
         viewportElementRef.current = el;

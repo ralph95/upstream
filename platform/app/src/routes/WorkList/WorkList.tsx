@@ -168,9 +168,9 @@ function WorkList({
 
   // Set body style
   useEffect(() => {
-    document.body.classList.add('bg-black');
+    document.body.classList.add('bg-[rgb(var(--background))]');
     return () => {
-      document.body.classList.remove('bg-black');
+      document.body.classList.remove('bg-[rgb(var(--background))]');
     };
   }, []);
 
@@ -441,7 +441,7 @@ function WorkList({
                       disabled={!isValidMode}
                       startIconTooltip={
                         !isValidMode ? (
-                          <div className="font-inter flex w-[206px] whitespace-normal text-left text-xs font-normal text-white">
+                          <div className="font-inter flex w-[206px] whitespace-normal text-left text-xs font-normal text-[rgb(var(--text))]">
                             {invalidModeDescription}
                           </div>
                         ) : null
@@ -463,6 +463,39 @@ function WorkList({
                 )
               );
             })}
+          </div>
+          {/* Custom layout inside expanded section */}
+          <div
+            className="rounded-lg p-4"
+            style={{
+              backgroundColor: 'rgb(var(--primary-dark))',
+              color: 'rgb(var(--text))',
+            }}
+          >
+            <h3 className="mb-2 font-semibold">2x2 Hanging Protocol</h3>
+
+            <div className="grid grid-cols-2 gap-2">
+              <div
+                className="flex h-40 items-center justify-center rounded-md text-sm"
+                style={{ backgroundColor: 'rgb(var(--secondary-dark))' }}
+              >
+                Top-left: Current Image
+              </div>
+
+              <div
+                className="flex h-40 items-center justify-center rounded-md text-sm"
+                style={{ backgroundColor: 'rgb(var(--secondary-dark))' }}
+              >
+                Top-right: Prior Exam
+              </div>
+
+              <div
+                className="col-span-2 flex h-40 items-center justify-center rounded-md text-sm"
+                style={{ backgroundColor: 'rgb(var(--secondary-dark))' }}
+              >
+                Bottom: Bitewing Placeholders
+              </div>
+            </div>
           </div>
         </StudyListExpandedRow>
       ),
@@ -551,7 +584,7 @@ function WorkList({
   );
 
   return (
-    <div className="flex h-screen flex-col bg-black">
+    <div className="flex h-screen flex-col bg-[rgb(var(--background))]">
       <Header
         isSticky
         menuOptions={menuOptions}
@@ -599,7 +632,7 @@ function WorkList({
           ) : (
             <div className="flex flex-col items-center justify-center pt-48">
               {appConfig.showLoadingIndicator && isLoadingData ? (
-                <LoadingIndicatorProgress className={'h-full w-full bg-black'} />
+                <LoadingIndicatorProgress className={'h-full w-full bg-[rgb(var(--background))]'} />
               ) : (
                 <EmptyStudies />
               )}

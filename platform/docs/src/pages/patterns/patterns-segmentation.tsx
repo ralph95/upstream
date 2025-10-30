@@ -87,7 +87,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Centroid X</div>
             <div>
-              <span className="text-white">{stats.centroidX.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.centroidX.value}</span>{' '}
               <span className="">{stats.centroidX.unit}</span>
             </div>
           </div>
@@ -95,7 +95,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Centroid Y</div>
             <div>
-              <span className="text-white">{stats.centroidY.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.centroidY.value}</span>{' '}
               <span className="">{stats.centroidY.unit}</span>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Centroid Z</div>
             <div>
-              <span className="text-white">{stats.centroidZ.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.centroidZ.value}</span>{' '}
               <span className="">{stats.centroidZ.unit}</span>
             </div>
           </div>
@@ -111,7 +111,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Frame Duration</div>
             <div>
-              <span className="text-white">{stats.frameDuration.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.frameDuration.value}</span>{' '}
               <span className="">{stats.frameDuration.unit}</span>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Kurtosis</div>
             <div>
-              <span className="text-white">{stats.kurtosis.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.kurtosis.value}</span>{' '}
               <span className="">{stats.kurtosis.unit}</span>
             </div>
           </div>
@@ -127,7 +127,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Max</div>
             <div>
-              <span className="text-white">{stats.max.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.max.value}</span>{' '}
               <span className="">{stats.max.unit}</span>
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Max Slice</div>
             <div>
-              <span className="text-white">{stats.maxSlice.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.maxSlice.value}</span>{' '}
               <span className="">{stats.maxSlice.unit}</span>
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Mean</div>
             <div>
-              <span className="text-white">{stats.mean.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.mean.value}</span>{' '}
               <span className="">{stats.mean.unit}</span>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Median</div>
             <div>
-              <span className="text-white">{stats.median.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.median.value}</span>{' '}
               <span className="">{stats.median.unit}</span>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Min</div>
             <div>
-              <span className="text-white">{stats.min.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.min.value}</span>{' '}
               <span className="">{stats.min.unit}</span>
             </div>
           </div>
@@ -167,7 +167,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Regions</div>
             <div>
-              <span className="text-white">{stats.regions.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.regions.value}</span>{' '}
               <span className="">{stats.regions.unit}</span>
             </div>
           </div>
@@ -175,7 +175,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Skewness</div>
             <div>
-              <span className="text-white">{stats.skewness.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.skewness.value}</span>{' '}
               <span className="">{stats.skewness.unit}</span>
             </div>
           </div>
@@ -183,7 +183,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Sphere Diameter</div>
             <div>
-              <span className="text-white">{stats.sphereDiameter.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.sphereDiameter.value}</span>{' '}
               <span className="">{stats.sphereDiameter.unit}</span>
             </div>
           </div>
@@ -191,7 +191,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Standard Deviation</div>
             <div>
-              <span className="text-white">{stats.standardDeviation.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.standardDeviation.value}</span>{' '}
               <span className="">{stats.standardDeviation.unit}</span>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">SUV Peak</div>
             <div>
-              <span className="text-white">{stats.suvPeak.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.suvPeak.value}</span>{' '}
               <span className="">{stats.suvPeak.unit}</span>
             </div>
           </div>
@@ -207,7 +207,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Total</div>
             <div>
-              <span className="text-white">{stats.total.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.total.value}</span>{' '}
               <span className="">{stats.total.unit}</span>
             </div>
           </div>
@@ -215,7 +215,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Glycolysis</div>
             <div>
-              <span className="text-white">{stats.glycolysis.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.glycolysis.value}</span>{' '}
               <span className="">{stats.glycolysis.unit}</span>
             </div>
           </div>
@@ -223,7 +223,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Volume</div>
             <div>
-              <span className="text-white">{stats.volume.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.volume.value}</span>{' '}
               <span className="">{stats.volume.unit}</span>
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function SegmentationPanel() {
           <div className="flex justify-between">
             <div className="">Voxel Count</div>
             <div>
-              <span className="text-white">{stats.voxelCount.value}</span>{' '}
+              <span className="text-[rgb(var(--text))]">{stats.voxelCount.value}</span>{' '}
               <span className="">{stats.voxelCount.unit}</span>
             </div>
           </div>
@@ -241,7 +241,7 @@ export default function SegmentationPanel() {
   };
 
   return (
-    <div className="px-auto flex min-h-screen w-full justify-center bg-black py-12">
+    <div className="px-auto flex min-h-screen w-full justify-center bg-[rgb(var(--background))] py-12">
       <div className="w-64 space-y-0">
         <TooltipProvider>
           <Accordion
@@ -331,7 +331,7 @@ export default function SegmentationPanel() {
 
                   {/* Appearance Settings */}
                   <AccordionItem value="segmentation-display">
-                    <AccordionTrigger className="bg-muted hover:bg-accent mt-0.5 flex h-7 w-full items-center justify-between rounded-b pr-1 pl-2 font-normal text-white">
+                    <AccordionTrigger className="bg-muted hover:bg-accent mt-0.5 flex h-7 w-full items-center justify-between rounded-b pr-1 pl-2 font-normal text-[rgb(var(--text))]">
                       <div className="flex space-x-2">
                         <Icons.Controls className="text-primary" />
                         <span className="text-primary pr-1">Appearance Settings</span>

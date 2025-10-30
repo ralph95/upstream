@@ -40,7 +40,7 @@ const MeasurementTable = ({
       <PanelSection defaultOpen={true}>
         <PanelSection.Header
           key="measurementTableHeader"
-          className="bg-secondary-dark"
+          className="bg-[rgb(var(--secondary-dark))]"
         >
           <span>{`${t(title)} (${amount})`}</span>
         </PanelSection.Header>
@@ -125,9 +125,7 @@ const Row = ({ item, index }: RowProps) => {
       isVisible={item.isVisible}
       isLocked={item.isLocked}
     >
-      {item.isUnmapped && (
-        <DataRow.Status.Warning tooltip={item.statusTooltip} />
-      )}
+      {item.isUnmapped && <DataRow.Status.Warning tooltip={item.statusTooltip} />}
     </DataRow>
   );
 };

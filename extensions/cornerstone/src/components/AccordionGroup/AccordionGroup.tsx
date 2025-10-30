@@ -98,7 +98,7 @@ function DefaultAccordion(props) {
   return (
     <Accordion
       type={grouping.type || 'multiple'}
-      className="text-white"
+      className="text-[rgb(var(--text))]"
       defaultValue={defaultValue}
     >
       {[...groups.entries()].map(([key, group]) => {

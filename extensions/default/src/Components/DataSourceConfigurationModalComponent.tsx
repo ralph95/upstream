@@ -100,8 +100,10 @@ function DataSourceConfigurationModalComponent({
   const getSelectedItemBackgroundClasses = itemIndex =>
     itemIndex < selectedItems.length
       ? classNames(
-          'bg-black/[.4]',
-          itemIndex !== itemLabels.length - 1 ? 'hover:bg-transparent active:bg-secondary-dark' : ''
+          'bg-[rgb(var(--background))]/[.4]',
+          itemIndex !== itemLabels.length - 1
+            ? 'hover:bg-transparent active:bg-[rgb(var(--secondary-dark))]'
+            : ''
         )
       : 'bg-transparent';
 
@@ -121,7 +123,7 @@ function DataSourceConfigurationModalComponent({
         <div className="text-primary-light text-[20px]">
           {t(`Error fetching ${itemLabels[selectedItems.length]} list`)}
         </div>
-        <div className="grow bg-black p-4 text-[14px]">{errorMessage}</div>
+        <div className="grow bg-[rgb(var(--background))] p-4 text-[14px]">{errorMessage}</div>
       </div>
     );
   };
@@ -159,7 +161,12 @@ function DataSourceConfigurationModalComponent({
                 <div className={classNames(NO_WRAP_ELLIPSIS_CLASS_NAMES)}>{t(itemLabel)}</div>
               </div>
               {itemLabelIndex < selectedItems.length ? (
-                <div className={classNames('text-[14px] text-white', NO_WRAP_ELLIPSIS_CLASS_NAMES)}>
+                <div
+                  className={classNames(
+                    'text-[14px] text-[rgb(var(--text))]',
+                    NO_WRAP_ELLIPSIS_CLASS_NAMES
+                  )}
+                >
                   {selectedItems[itemLabelIndex].name}
                 </div>
               ) : (
@@ -175,7 +182,7 @@ function DataSourceConfigurationModalComponent({
   return (
     <div className="flex h-[calc(100vh-300px)] select-none flex-col gap-4 pt-0.5">
       {getSelectedItemsComponent()}
-      <div className="h-0.5 w-full shrink-0 bg-black"></div>
+      <div className="h-0.5 w-full shrink-0 bg-[rgb(var(--background))]"></div>
       {errorMessage ? (
         getErrorComponent()
       ) : (

@@ -8,12 +8,14 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
  */
 export default function ComponentsList() {
   return (
-    <Layout title="Components" description="OHIF Viewer Components">
+    <Layout
+      title="Components"
+      description="OHIF Viewer Components"
+    >
       <BrowserOnly fallback={<></>}>
         {() => {
           // Dynamically require all sub-components to avoid SSR issues
-          const { TooltipProvider } =
-            require('../../../ui-next/src/components/Tooltip');
+          const { TooltipProvider } = require('../../../ui-next/src/components/Tooltip');
 
           const {
             Card,
@@ -50,7 +52,7 @@ export default function ComponentsList() {
 
           return (
             <TooltipProvider>
-              <div className="text-foreground min-h-screen bg-black">
+              <div className="text-foreground min-h-screen bg-[rgb(var(--background))]">
                 <div className="mx-auto my-4 max-w-5xl pt-4 pb-6">
                   {/* Navigation cards */}
                   <div className="mb-8 grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -104,9 +106,7 @@ export default function ComponentsList() {
                     </a>
                   </div>
 
-                  <h1 className="text-foreground ml-6 mb-6 text-5xl">
-                    Components
-                  </h1>
+                  <h1 className="text-foreground ml-6 mb-6 text-5xl">Components</h1>
 
                   <AllinOneMenuShowcase />
                   <ButtonShowcase />

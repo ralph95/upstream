@@ -37,15 +37,17 @@ const Clipboard: React.FC<ClipboardProps> = ({ children }) => {
         e.stopPropagation();
         handleCopy();
       }}
-      className="text-white"
+      className="text-[rgb(var(--text))]"
       title="Copy"
     >
       {copyState === 'idle' && <Icons.Copy className="h-6 w-6" />}
-      {copyState === 'success' && <Icons.FeedbackComplete className="h-6 w-6 text-white" />}
+      {copyState === 'success' && (
+        <Icons.FeedbackComplete className="h-6 w-6 text-[rgb(var(--text))]" />
+      )}
       {copyState === 'error' && (
         <Icons.ByName
           name="Error"
-          className="h-6 w-6 text-white"
+          className="h-6 w-6 text-[rgb(var(--text))]"
         />
       )}
     </Button>

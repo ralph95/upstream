@@ -9,8 +9,7 @@ import TableCell from '../TableCell';
 
 const StudyListExpandedRow = ({ seriesTableColumns, seriesTableDataSource, children }) => {
   return (
-    <div className="w-full bg-black py-4 pl-12 pr-2">
-      <div className="block">{children}</div>
+    <div className="w-full bg-[rgb(var(--background))] py-4 pl-12 pr-2">
       <div className="mt-4">
         <Table>
           <TableHead>
@@ -39,6 +38,7 @@ const StudyListExpandedRow = ({ seriesTableColumns, seriesTableDataSource, child
             ))}
           </TableBody>
         </Table>
+        <div className="mt-4 block">{children}</div>
       </div>
     </div>
   );

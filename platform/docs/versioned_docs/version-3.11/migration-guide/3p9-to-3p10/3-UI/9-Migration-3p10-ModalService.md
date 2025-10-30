@@ -45,7 +45,7 @@ A: This can happen if you were previously setting the background color on the di
 For example:
 ```diff
 - containerClassName: 'w-[70%] max-w-[900px]',
-+ containerClassName: 'w-[70%] max-w-[900px]  bg-primary-dark text-foreground',
++ containerClassName: 'w-[70%] max-w-[900px]  bg-[rgb(var(--primary-dark))] text-foreground',
 ```
 
 
@@ -77,7 +77,7 @@ function CornerstoneViewportDownloadForm({ activeViewportId }) {
     <div className="h-[493px] w-[460px] pl-[12px] pr-[12px]">
       <h2 className="text-lg font-bold">Download Image</h2>
       <p>Viewport ID: {activeViewportId}</p>
-      <button className="mt-4 bg-blue-500 text-white p-2 rounded">Download</button>
+      <button className="mt-4 bg-blue-500 text-[rgb(var(--text))] p-2 rounded">Download</button>
     </div>
   );
 }

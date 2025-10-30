@@ -27,45 +27,45 @@ const roundedClasses = {
 const variants = {
   text: {
     default:
-      'text-primary-light hover:bg-primary-light hover:text-white active:opacity-80 focus:bg-primary-light focus:text-white',
+      'text-primary-light hover:bg-primary-light hover:text-[rgb(var(--text))] active:opacity-80 focus:bg-primary-light focus:text-[rgb(var(--text))]',
     primary:
-      'text-primary-main hover:bg-primary-main hover:text-white active:opacity-80 focus:bg-primary-main focus:text-white',
+      'text-primary-main hover:bg-primary-main hover:text-[rgb(var(--text))] active:opacity-80 focus:bg-primary-main focus:text-[rgb(var(--text))]',
     secondary:
-      'text-secondary-light hover:bg-secondary-light hover:text-white active:opacity-80 focus:bg-secondary-light focus:text-white',
+      'text-secondary-light hover:bg-secondary-light hover:text-[rgb(var(--text))] active:opacity-80 focus:bg-secondary-light focus:text-[rgb(var(--text))]',
     white:
-      'text-white hover:bg-white hover:text-black active:opacity-80 focus:bg-white focus:text-black',
+      'text-[rgb(var(--text))] hover:bg-white hover:text-black active:opacity-80 focus:bg-white focus:text-black',
     black:
-      'text-black hover:bg-black hover:text-white focus:bg-black focus:text-white active:opacity-80',
+      'text-black hover:bg-[rgb(var(--background))] hover:text-[rgb(var(--text))] focus:bg-[rgb(var(--background))] focus:text-[rgb(var(--text))] active:opacity-80',
   },
   outlined: {
     default:
       'text-primary-light hover:bg-primary-light hover:text-black focus:text-black focus:bg-primary-light active:opacity-80',
     primary: 'text-primary-main hover:opacity-80 active:opacity-100 focus:opacity-80',
     secondary: 'text-secondary-light hover:opacity-80 active:opacity-100 focus:opacity-80',
-    translucent: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
+    translucent: 'text-[rgb(var(--text))] hover:opacity-80 active:opacity-100 focus:opacity-80',
     white:
       'text-black hover:bg-primary-main focus:bg-primary-main hover:border-black focus:border-black',
     black:
-      'text-white hover:bg-primary-main focus:bg-primary-main hover:border-black focus:border-black',
+      'text-[rgb(var(--text))] hover:bg-primary-main focus:bg-primary-main hover:border-black focus:border-black',
     primaryActive: 'text-primary-active hover:opacity-80 active:opacity-100 focus:opacity-80',
     primaryLight:
-      'border bg-transparent border-primary-main text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
+      'border bg-transparent border-primary-main text-[rgb(var(--text))] hover:opacity-80 active:opacity-100 focus:opacity-80',
   },
   contained: {
     default: 'text-black hover:opacity-80 active:opacity-100 focus:opacity-80',
-    primary: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
+    primary: 'text-[rgb(var(--text))] hover:opacity-80 active:opacity-100 focus:opacity-80',
     primaryDark: 'text-primary-active hover:opacity-80 active:opacity-100 focus:opacity-80',
-    secondary: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
+    secondary: 'text-[rgb(var(--text))] hover:opacity-80 active:opacity-100 focus:opacity-80',
     white: 'text-black hover:opacity-80 active:opacity-100 focus:opacity-80',
-    black: 'text-white hover:opacity-80 active:opacity-100 focus:opacity-80',
+    black: 'text-[rgb(var(--text))] hover:opacity-80 active:opacity-100 focus:opacity-80',
     light: 'border text-black hover:opacity-80 active:opacity-100 focus:opacity-80',
   },
   disabled: {
     default: 'cursor-not-allowed opacity-50 text-black',
-    primary: 'cursor-not-allowed opacity-50 text-white',
-    secondary: 'cursor-not-allowed opacity-50 text-white',
+    primary: 'cursor-not-allowed opacity-50 text-[rgb(var(--text))]',
+    secondary: 'cursor-not-allowed opacity-50 text-[rgb(var(--text))]',
     white: 'cursor-not-allowed opacity-50 text-black',
-    black: 'cursor-not-allowed opacity-50 text-white',
+    black: 'cursor-not-allowed opacity-50 text-[rgb(var(--text))]',
     light: 'cursor-not-allowed opacity-50 border text-black',
   },
 };
@@ -82,16 +82,16 @@ const defaultVariantBackGroundColor = {
     default: 'bg-transparent',
     primary: 'bg-transparent',
     secondary: 'bg-transparent',
-    black: 'bg-black',
+    black: 'bg-[rgb(var(--background))]',
     white: '',
   },
   contained: {
     default: 'bg-primary-light',
     primary: 'bg-primary-main',
-    primaryDark: 'bg-primary-dark',
+    primaryDark: 'bg-[rgb(var(--primary-dark))]',
     secondary: 'bg-secondary-light',
     white: 'bg-white',
-    black: 'bg-black',
+    black: 'bg-[rgb(var(--background))]',
     light: 'bg-primary-light',
   },
   disabled: {
@@ -99,7 +99,7 @@ const defaultVariantBackGroundColor = {
     primary: 'bg-primary-main',
     secondary: 'bg-secondary-light',
     white: 'bg-white',
-    black: 'bg-black',
+    black: 'bg-[rgb(var(--background))]',
     light: 'bg-primary-light',
   },
 };

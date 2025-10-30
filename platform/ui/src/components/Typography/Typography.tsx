@@ -43,7 +43,7 @@ const classes = {
     inherit: '',
   },
   color: {
-    initial: 'text-white',
+    initial: 'text-[rgb(var(--text))]',
     inherit: 'text-inherit',
     primary: 'text-primary-main',
     primaryActive: 'text-primary-active',

@@ -9,7 +9,7 @@ const NotFound = ({ message = 'Sorry, this page does not exist.', showGoBackButt
   const { showStudyList } = appConfig;
 
   return (
-    <div className="flex h-full w-full items-center justify-center text-white">
+    <div className="flex h-full w-full items-center justify-center text-[rgb(var(--text))]">
       <div>
         <h4>{message}</h4>
         {showGoBackButton && showStudyList && (
