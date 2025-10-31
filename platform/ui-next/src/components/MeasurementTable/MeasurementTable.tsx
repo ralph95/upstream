@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { PanelSection, Icons } from '../../index';
 import DataRow from '../DataRow/DataRow';
 import { createContext } from '../../lib/createContext';
+import { useRunCommand } from '@ohif/core/src';
 
 interface MeasurementTableContext {
   data?: MeasurementItem[];
@@ -100,10 +101,41 @@ const Body = () => {
   const { data, onAction } = useMeasurementTableContext('MeasurementTable.Body');
   const [lastSelected, setLastSelected] = React.useState<string | null>(null);
 
+  // Get OHIF runCommand function
+  const runCommand = useRunCommand();
+
   const addMeasurement = (type: string, value: string) => {
     setLastSelected(type);
 
-    // Call onAction with a custom handler that adds the label from the button
+    // Trigger OHIF tools based on button type
+    if (type === 'PA length') {
+      runCommand('setToolActive', {
+        toolName: 'Length', // OHIF ruler tool
+        toolGroupId: 'default',
+      });
+    } else if (type === 'Canal angle') {
+      runCommand('setToolActive', {
+        toolName: 'Angle', // OHIF angle tool
+        toolGroupId: 'default',
+      });
+    } else if (type === 'Crown width') {
+      runCommand('setToolActive', {
+        toolName: 'Length', // OHIF ruler tool
+        toolGroupId: 'default',
+      });
+    } else if (type === 'Root length') {
+      runCommand('setToolActive', {
+        toolName: 'Length', // OHIF ruler tool
+        toolGroupId: 'default',
+      });
+    } else {
+      runCommand('setToolActive', {
+        toolName: 'Length', // OHIF ruler tool
+        toolGroupId: 'default',
+      });
+    }
+
+    // Call onAction to track the measurement in your table
     onAction?.(null, 'addMeasurement', value, type);
   };
 
