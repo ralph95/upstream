@@ -143,7 +143,7 @@ module.exports = (env, argv) => {
     // https://webpack.js.org/configuration/dev-server/
     devServer: {
       host: '0.0.0.0', // Listen on all network interfaces
-      port: OHIF_PORT, // Usually 3000
+      port: 3000, // Usually 3000
       open: false, // Don't try to open a browser on the server
       allowedHosts: 'all', // Allow access from any host
       client: {
