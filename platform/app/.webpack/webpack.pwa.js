@@ -146,7 +146,6 @@ module.exports = (env, argv) => {
       port: OHIF_PORT, // Usually 3000
       open: false, // Don't try to open a browser on the server
       allowedHosts: 'all', // Allow access from any host
-      http: 'true',
       client: {
         overlay: { errors: true, warnings: false },
       },
