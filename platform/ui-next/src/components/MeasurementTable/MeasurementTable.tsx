@@ -76,6 +76,7 @@ const Body = () => {
     key: 'label',
     direction: 'asc',
   });
+  const [filterType, setFilterType] = React.useState<string>('All');
 
   const runCommand = useRunCommand();
 
@@ -96,19 +97,26 @@ const Body = () => {
     );
   };
 
-  /** Sorted data **/
-  const sortedData = React.useMemo(() => {
-    if (!data) return [];
-    const sorted = [...data];
+  /** Sorted and filtered data **/
+  const filteredData = React.useMemo(() => {
+    let tempData = data ?? [];
+    if (filterType !== 'All') {
+      tempData = tempData.filter(item => {
+        if (item.toolName === 'Angle' && filterType === 'Canal angle') return true;
+        if (item.toolName === 'Length' && filterType === 'PA length') return true;
+        return item.label === filterType;
+      });
+    }
 
+    const sorted = [...tempData];
     sorted.sort((a, b) => {
       let aVal: string | number = '';
       let bVal: string | number = '';
 
       switch (sortConfig.key) {
         case 'index':
-          aVal = data.indexOf(a);
-          bVal = data.indexOf(b);
+          aVal = tempData.indexOf(a);
+          bVal = tempData.indexOf(b);
           break;
         case 'label':
           aVal = a.label?.toLowerCase() ?? '';
@@ -138,18 +146,22 @@ const Body = () => {
     });
 
     return sorted;
-  }, [data, sortConfig]);
+  }, [data, sortConfig, filterType]);
 
-  /** Export the currently sorted data **/
+  /** Export the currently sorted & filtered data **/
   const exportTableData = () => {
-    if (!sortedData || sortedData.length === 0) return;
+    if (!filteredData || filteredData.length === 0) return;
 
-    const exportData = sortedData.map((item, index) => {
+    const exportData = filteredData.map((item, index) => {
       const measuredValue = item.value ?? item.displayText?.primary?.[0] ?? '(empty)';
-      const label = item.label ?? '(empty)';
       return {
         index: index + 1,
-        label,
+        label:
+          item.toolName === 'Angle'
+            ? 'Canal angle'
+            : item.toolName === 'Length'
+              ? 'PA length'
+              : (item.label ?? '(empty)'),
         value: measuredValue,
       };
     });
@@ -168,6 +180,17 @@ const Body = () => {
       <span className="ml-1 select-none text-xs">{sortConfig.direction === 'asc' ? '▲' : '▼'}</span>
     );
   };
+
+  /** Extract all types for dropdown options **/
+  const typeOptions = React.useMemo(() => {
+    const types = new Set<string>();
+    data?.forEach(item => {
+      if (item.toolName === 'Angle') types.add('Canal angle');
+      else if (item.toolName === 'Length') types.add('PA length');
+      else if (item.label) types.add(item.label);
+    });
+    return ['All', ...Array.from(types)];
+  }, [data]);
 
   return (
     <div className="measurement-table-body flex h-[700px] flex-col space-y-2 overflow-y-auto">
@@ -190,11 +213,30 @@ const Body = () => {
         })}
       </div>
 
+      {/* Dropdown Filter */}
+      <div className="mb-2">
+        <label className="mr-2 font-medium">Filter by Type:</label>
+        <select
+          className="rounded border border-gray-600 bg-[rgb(var(--background))] px-3 py-1 text-[rgb(var(--text))] transition-colors hover:bg-[rgb(var(--secondary-dark))]"
+          value={filterType}
+          onChange={e => setFilterType(e.target.value)}
+        >
+          {typeOptions.map(type => (
+            <option
+              key={type}
+              value={type}
+            >
+              {type}
+            </option>
+          ))}
+        </select>
+      </div>
+
       {/* Measurement Table */}
-      {sortedData.length > 0 ? (
+      {filteredData.length > 0 ? (
         <>
           <table className="min-w-full rounded border border-gray-600 text-sm">
-            <thead className="sticky top-0 z-10 select-none bg-[rgb(var(--secondary-dark))] text-white">
+            <thead className="text--[rgb(var(--text)) sticky top-0 z-10 select-none bg-[rgb(var(--primary-dark))]">
               <tr>
                 <th
                   className="cursor-pointer px-3 py-2 text-left hover:bg-[rgb(var(--secondary))]"
@@ -218,7 +260,7 @@ const Body = () => {
               </tr>
             </thead>
             <tbody>
-              {sortedData.map((item, index) => (
+              {filteredData.map((item, index) => (
                 <Row
                   key={item.uid}
                   item={item}
@@ -231,11 +273,11 @@ const Body = () => {
           {/* Export Button */}
           <div className="mt-3">
             <button
-              className="flex w-full items-center justify-center gap-1 rounded bg-[rgb(var(--primary-dark))] px-3 py-1 text-white transition hover:bg-[rgb(var(--primary))]"
+              className="text--[rgb(var(--text)) flex w-full items-center justify-center gap-1 rounded bg-[rgb(var(--primary-dark))] px-3 py-1 transition hover:bg-[rgb(var(--primary))]"
               onClick={exportTableData}
             >
               <Icons.Export className="h-4 w-4" />
-              Export JSON (Sorted)
+              Export JSON (Sorted & Filtered)
             </button>
           </div>
         </>
@@ -259,7 +301,11 @@ const Row = ({ item, index }: { item: MeasurementItem; index: number }) => {
       }`}
     >
       <td className="px-3 py-2">{index + 1}</td>
-      <td className="px-3 py-2">{item.label}</td>
+      {(() => {
+        if (item.toolName === 'Angle') return 'Canal angle';
+        if (item.toolName === 'Length') return 'PA length';
+        return item.label || '(Unknown)';
+      })()}
       <td className="px-3 py-2">{primaryValue}</td>
       <td className="flex gap-2 px-3 py-2">
         {!disableEditing && (
