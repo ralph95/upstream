@@ -142,13 +142,10 @@ module.exports = (env, argv) => {
     ],
     // https://webpack.js.org/configuration/dev-server/
     devServer: {
-      // gzip compression of everything served
-      // Causes Cypress: `wait-on` issue in CI
-      // compress: true,
-      // http2: true,
-      // https: true,
-      open: true,
+      host: '0.0.0.0',
       port: OHIF_PORT,
+      open: false, // optional
+      allowedHosts: 'all', // allow access from any IP
       client: {
         overlay: { errors: true, warnings: false },
       },
@@ -169,8 +166,6 @@ module.exports = (env, argv) => {
           publicPath: '/viewer-testdata',
         },
       ],
-      //public: 'http://localhost:' + 3000,
-      //writeToDisk: true,
       historyApiFallback: {
         disableDotRule: true,
         index: PUBLIC_URL + 'index.html',
