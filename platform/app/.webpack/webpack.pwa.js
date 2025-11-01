@@ -142,21 +142,14 @@ module.exports = (env, argv) => {
     ],
     // https://webpack.js.org/configuration/dev-server/
     devServer: {
-      // gzip compression of everything served
-      // Causes Cypress: `wait-on` issue in CI
-      // compress: true,
-      // http2: true,
-      // https: true,
-      open: true,
-      port: OHIF_PORT,
+      host: '0.0.0.0', // Listen on all network interfaces
+      port: OHIF_PORT, // Usually 3000
+      open: false, // Don't try to open a browser on the server
+      allowedHosts: 'all', // Allow access from any host
+      http: 'true',
       client: {
         overlay: { errors: true, warnings: false },
       },
-      proxy: [
-        {
-          '/dicomweb': 'http://localhost:5000',
-        },
-      ],
       static: [
         {
           directory: '../../testdata',
@@ -169,8 +162,6 @@ module.exports = (env, argv) => {
           publicPath: '/viewer-testdata',
         },
       ],
-      //public: 'http://localhost:' + 3000,
-      //writeToDisk: true,
       historyApiFallback: {
         disableDotRule: true,
         index: PUBLIC_URL + 'index.html',
@@ -178,6 +169,11 @@ module.exports = (env, argv) => {
       devMiddleware: {
         writeToDisk: true,
       },
+      proxy: [
+        {
+          '/dicomweb': 'http://localhost:5000',
+        },
+      ],
     },
   });
 
