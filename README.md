@@ -1,3 +1,72 @@
+/* -------------------------------------------------------------------------- */
+/*                            Exam Update                                     */
+/* -------------------------------------------------------------------------- */
+
+# Dental SaaS Platform – OHIF Customization
+**Exam Update by Ralph**
+
+Welcome!
+This repository contains the customized **OHIF Viewer** with an integrated **Dental Mode**, designed as part of the exam deliverables.
+
+---
+
+## 🧩 Overview
+
+This version of the **Dental SaaS Platform** implements:
+
+### Dental Mode UI Customization (Front-end)
+- Added **Dental Mode toggle** (theme switcher for colors, typography, and icons).
+- Replaced the standard OHIF header with a **Practice Header**, which includes:
+  - Practice Name display
+  - Patient Information section
+  - Tooth Selector (supports FDI and Universal numbering systems)
+- Implemented a **2x2 Hanging Protocol** layout:
+  - **Top-left:** Current image
+  - **Top-right:** Prior exam (same modality)
+  - **Bottom-left & Bottom-right:** Bitewing placeholders
+
+---
+
+### New Feature – Dental Measurements Palette
+
+Introduced a **custom dental measurement toolkit** tailored for dental diagnostics:
+- **Measurements Palette** includes:
+  - *Periapical length (mm)* – uses distance tool (auto-labeled “PA length”)
+  - *Canal angle (°)* – uses angle tool (auto-labeled “Canal angle”)
+  - *Crown width (mm)* and *Root length (mm)* tools
+- Each measurement automatically:
+  - Displays label and value
+  - Appears in a right-hand measurement table with **sorting** and **filtering**
+- Added an **Export JSON** feature to download all measurement data.
+
+---
+
+## Getting Started Run the following commands depends on what need
+
+| Yarn Commands                | Description                                                   |
+| ---------------------------- | ------------------------------------------------------------- |
+| **Develop**                  |                                                               |
+| `dev`                        | Default development experience for Viewer                     |
+| `dev:fast`                   | Our experimental fast dev mode that uses rsbuild instead of webpack
+| `test:unit`                  | Jest multi-project test runner; overall coverage              |
+| **Deploy**                   |                                                               |
+| `build`\*                    | Builds production output for our PWA Viewer                   |
+
+## For Production Deployment Run this command
+1. yarn build
+2. npm install -g http-server
+3. Got to platform/app
+4. Run http-server dist -p 3000
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                        End Exam Update                                     */
+/* -------------------------------------------------------------------------- */
+
+
+
+
 <!-- prettier-ignore-start -->
 <div align="center">
   <h1>OHIF Medical Imaging Viewer</h1>
