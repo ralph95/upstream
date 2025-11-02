@@ -10,7 +10,7 @@ This repository contains the customized **OHIF Viewer** with an integrated **Den
 
 ---
 
-## 🧩 Overview
+## Overview
 
 This version of the **Dental SaaS Platform** implements:
 
@@ -49,8 +49,6 @@ Introduced a **custom dental measurement toolkit** tailored for dental diagnosti
 | `dev`                        | Default development experience for Viewer                     |
 | `dev:fast`                   | Our experimental fast dev mode that uses rsbuild instead of webpack
 | `test:unit`                  | Jest multi-project test runner; overall coverage              |
-| **Deploy**                   |                                                               |
-| `build`\*                    | Builds production output for our PWA Viewer                   |
 
 ## For Production Deployment Run this command
 1. yarn build
